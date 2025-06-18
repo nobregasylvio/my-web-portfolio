@@ -1,0 +1,10 @@
+:root {
+  /* Cores principais */
+  --color-bg: #0F172A;            /* Fundo escuro */
+  --color-surface: #1E293B;       /* Fundo dos cards/seções */
+  --color-text: #F1F5F9;          /* Texto principal */
+  --color-muted: #E2E8F0;         /* Texto secundário */
+  --color-border: #334155;        /* Bordas, divisores */
+  --color-accent: #38BDF8;        /* Destaque (azul claro) */
+  --color-accent-hover: #0EA5E9;  /* Hover do destaque */
+}
