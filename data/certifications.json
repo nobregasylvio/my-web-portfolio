@@ -1,0 +1,82 @@
+[
+  {
+    "Titulo": "Bootcamp - Banco Pan java developer",
+    "Instituicao": "DIO",
+    "HardSkills": [
+      "Java",
+      "Spring Boot",
+      "Spring Data",
+      "SQL",
+      "NoSQL",
+      "Dynamo",
+      "Programação orientada a objetos (POO)",
+      "API REST",
+      "Spring Security",
+      "JUnit",
+      "Maven"
+    ],
+    "urlCertificado": "https://hermes.dio.me/certificates/FE44B7B1.pdf"
+  }, {
+    "Titulo": "Desenvolvimento Web Full stack",
+    "Instituicao": "Trybe",
+    "HardSkills": [
+      "Javascript",
+      "Node.js",
+      "React",
+      "Desenvolvimento de software",
+      "Front end",
+      "Back end",
+      "Ciência da computação",
+      "Metodologias Agéis"
+    ],
+    "urlCertificado": "https://www.credential.net/61e635d3-9dbb-4a18-aee8-b9fdc45a6809#acc.BY7gNkEL"
+  }, {
+    "Titulo": "Ciência da Computação",
+    "Instituicao": "Trybe",
+    "HardSkills": [
+      "Python",
+      "POO",
+      "Análise de dados"
+    ],
+    "urlCertificado": "https://www.credential.net/3145b96f-f915-4ff2-9fb9-21c63b92bceb#acc.AbawpFu9"
+  }, {
+    "Titulo": "Desenvolvimento Front End",
+    "Instituicao": "Trybe",
+    "HardSkills": [
+      "Javascript",
+      "React",
+      "Redux",
+      "React Hooks",
+      "Consumo de APIs"
+    ],
+    "urlCertificado": "https://www.credential.net/4dfe671b-0646-479e-968f-2c6465e25edf#acc.UbecyjoR"
+  }, {
+    "Titulo": "Desenvolvimento Back End",
+    "Instituicao": "Trybe",
+    "HardSkills": [
+      "Javascript",
+      "Node.js",
+      "Docker",
+      "SQL e noSQL",
+      "Express",
+      "API REST",
+      "ORM",
+      "TypeScript",
+      "POO",
+      "SOLID",
+      "JWT"
+    ],
+    "urlCertificado": "https://www.credential.net/b97ded47-c1e9-41aa-8f19-2db3742808b0#acc.0glf47vk"
+  }, {
+    "Titulo": "Fundamentos de desenvolvimento web",
+    "Instituicao": "Trybe",
+    "HardSkills": [
+      "Javascript",
+      "HTML",
+      "CSS",
+      "DOM",
+      "GIT"
+    ],
+    "urlCertificado": "https://www.credential.net/b97ded47-c1e9-41aa-8f19-2db3742808b0#acc.0glf47vk"
+  }
+]
