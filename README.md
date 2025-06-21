@@ -8,7 +8,7 @@ O objetivo é apresentar minhas informações, meus projetos e minhas redes de c
 - HTML5
 - CSS3
 - JavaScript ES6+
-- JSON (para carregar os projetos dinamicamente)
+- JSON (para carregar os projetos e certificações dinamicamente)
 
 ## 📂 Estrutura
 
