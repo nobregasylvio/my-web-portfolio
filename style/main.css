@@ -186,3 +186,22 @@ body {
   pointer-events: auto;
 }
 
+/* =====================
+   Animação de Tchau
+====================== */
+.wave {
+  display: inline-block;
+  animation: wave-hand 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-hand {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(18deg); }
+  20% { transform: rotate(-12deg); }
+  30% { transform: rotate(18deg); }
+  40% { transform: rotate(-8deg); }
+  50% { transform: rotate(12deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
