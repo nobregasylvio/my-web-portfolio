@@ -8,7 +8,7 @@
 </head>
 <body>
   <!-- 1. Apresentação -->
-  <section id="hero">
+  <section id="hero" class="card-padrao">
     <div class="hero-content">
       <h1>Olá, eu sou o Sylvio <span class="wave">👋</span></h1>
       <p>Desenvolvedor back-end Jr</p>
@@ -35,60 +35,54 @@
     <a href="#hero">Início</a>
     <a href="#sobre">Sobre mim</a>
     <a href="#projetos">Projetos</a>
-    <a href="#cerificacoes">Certificações & Skills</a>
-    <a href="#contato">Contato</a>
+    <a href="#certificacoes">Certificações & Skills</a>
+    <a href="#footer">Contato</a>
   </nav>
 
   <!-- 3. Projetos -->
   <section id="projetos">
     <h2>Projetos</h2>
-    <div id="projetos-container">
-      <!-- Aqui aparecem os projetos (carregados por JS)  -->
+    <div class="projetos-card card-padrao">
+      <div id="projetos-container">
+        <!-- Aqui aparecem os projetos (carregados por JS)  -->
+      </div>
     </div>
   </section>
 
   <!-- 4. Certificações e Skills (carregados por JS) -->
   <section id="certificacoes">
     <h2>Certificações & Skills</h2>
-    <div class="cert-list">
-      <h3>Certificações</h3>
-      <div id="cert-container">
-        <!-- Aqui aparecem as certificações (carregados por JS)  -->
+    <div class="cert-skills-container card-padrao">
+      <div class="cert-list">
+        <h3>Certificações</h3>
+        <div id="cert-container">
+          <!-- Certificações serão carregadas por JS -->
+        </div>
       </div>
-    </div>
-
-    <!-- Aqui aparecem as soft skills e serão substituidas pelo conteúdo/hard skills da certificação -->
-    <div id="skills-display">
-      <h3>Soft Skills</h3>
-      <ul id="skills-list">
-        <li>Comunicação</li>
-        <li>Trabalho em equipe</li>
-        <li>Adaptabilidade</li>
-        <li>Resolução de problemas</li>
-        <li>Gerenciamento de tempo</li>
-        <li>Empatia</li>
-        <li>Paciência</li>
-      </ul>
+      <div id="skills-display">
+        <h3>Soft Skills</h3>
+        <ul id="skills-list">
+          <li>Comunicação</li>
+          <li>Trabalho em equipe</li>
+          <li>Adaptabilidade</li>
+          <li>Resolução de problemas</li>
+          <li>Gerenciamento de tempo</li>
+          <li>Empatia</li>
+          <li>Paciência</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- 5. Rodapé -->
-  <footer>
-    <div class="social-icons">
-      <a href="https://github.com/nobregasylvio" target="_blank">
-        GitHub
-      </a>
-      <a href="https://linkedin.com/in/nobregasylvio" target="_blank">
-        LinkedIn
-      </a>
-      <a href="mailto:sylvionobregasoares@gmail.com">
-        Email
-      </a>
-      <a href="https://wa.me/5511949396163" target="_blank">
-        WhatsApp
-      </a>
+  <footer id="footer" class="card-padrao footer">
+    <div class="footer-social">
+      <a href="https://github.com/nobregasylvio" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/nobregasylvio" target="_blank">LinkedIn</a>
+      <a href="mailto:sylvionobregasoares@gmail.com">Email</a>
+      <a href="https://wa.me/5511949396163" target="_blank">WhatsApp</a>
     </div>
-    <p>&copy; 2025 Sylvio Nóbrega Soares. Todos os direitos reservados.</p>
+    <p class="footer-copy">&copy; 2025 Sylvio Nóbrega Soares. Todos os direitos reservados.</p>
   </footer>
 
   <script src="scripts/main.js"></script>

@@ -58,18 +58,27 @@ body {
 }
 
 /* =====================
+   Cards Padrão (Hero, Projetos, Certificações)
+====================== */
+.card-padrao {
+  background: var(--color-surface);
+  border-radius: 48px;
+  padding: 2rem 3vw;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  max-width: 1200px;
+}
+
+/* =====================
    Hero Section
 ====================== */
 #hero {
-  background-color: var(--color-surface);
+  /* Herda visual do card padrão */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem 11vw;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 48px;
+  padding: 2rem 11vw; /* Mantém o padding especial do hero */
 }
 
 .hero-content {
@@ -188,6 +197,93 @@ body {
 }
 
 /* =====================
+   Certificações & Skills
+====================== */
+#certificacoes {
+  background-color: transparent;
+  margin: 3rem 0 0 0;
+}
+
+#certificacoes > h2 {
+  width: 100%;
+  text-align: center;
+  color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.cert-skills-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.cert-list, #skills-display {
+  flex: 1;
+  background: transparent;
+  border-radius: 24px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cert-list h3, #skills-display h3 {
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#cert-container {
+  width: 100%;
+  min-height: 80px;
+}
+
+#skills-list {
+  list-style: disc inside;
+  padding-left: 1rem;
+  color: var(--color-text);
+  font-size: 1.08rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* =====================
+   Projetos
+====================== */
+#projetos {
+  background-color: transparent;
+  margin: 3rem 0 0 0;
+}
+
+#projetos > h2 {
+  width: 100%;
+  text-align: center;
+  color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.projetos-card {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#projetos-container {
+  width: 100%;
+  /* Aqui você pode adicionar grid ou flex para os cards de projetos depois */
+}
+
+/* =====================
    Animação de Tchau
 ====================== */
 .wave {
@@ -205,4 +301,72 @@ body {
   50% { transform: rotate(12deg); }
   60% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
+}
+
+/* =====================
+   Footer (links à esquerda, texto centralizado absoluto)
+====================== */
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border-radius: 48px;
+  padding: 0.7rem 2vw;
+  margin: 2rem auto 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  max-width: 1200px;
+  min-height: 56px;
+}
+
+.footer-social {
+  position: absolute;
+  left: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.footer-social a:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-text);
+}
+
+.footer-copy {
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    flex-direction: column;
+    padding: 1.2rem 2vw;
+    min-height: unset;
+  }
+  .footer-social {
+    position: static;
+    transform: none;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .footer-copy {
+    width: 100%;
+    text-align: center;
+  }
 }
