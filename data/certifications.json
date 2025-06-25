@@ -31,6 +31,23 @@
     ],
     "urlCertificado": "https://www.credential.net/61e635d3-9dbb-4a18-aee8-b9fdc45a6809#acc.BY7gNkEL"
   }, {
+    "Titulo": "Desenvolvimento Back End",
+    "Instituicao": "Trybe",
+    "HardSkills": [
+      "Javascript",
+      "Node.js",
+      "Docker",
+      "SQL e noSQL",
+      "Express",
+      "API REST",
+      "ORM",
+      "TypeScript",
+      "POO",
+      "SOLID",
+      "JWT"
+    ],
+    "urlCertificado": "https://www.credential.net/b97ded47-c1e9-41aa-8f19-2db3742808b0#acc.0glf47vk"
+  }, {
     "Titulo": "Ciência da Computação",
     "Instituicao": "Trybe",
     "HardSkills": [
@@ -50,23 +67,6 @@
       "Consumo de APIs"
     ],
     "urlCertificado": "https://www.credential.net/4dfe671b-0646-479e-968f-2c6465e25edf#acc.UbecyjoR"
-  }, {
-    "Titulo": "Desenvolvimento Back End",
-    "Instituicao": "Trybe",
-    "HardSkills": [
-      "Javascript",
-      "Node.js",
-      "Docker",
-      "SQL e noSQL",
-      "Express",
-      "API REST",
-      "ORM",
-      "TypeScript",
-      "POO",
-      "SOLID",
-      "JWT"
-    ],
-    "urlCertificado": "https://www.credential.net/b97ded47-c1e9-41aa-8f19-2db3742808b0#acc.0glf47vk"
   }, {
     "Titulo": "Fundamentos de desenvolvimento web",
     "Instituicao": "Trybe",
