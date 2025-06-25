@@ -240,6 +240,9 @@ body {
 #cert-container {
   width: 100%;
   min-height: 80px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 4px; /* espaço para scrollbar */
 }
 
 #skills-list {
@@ -352,21 +355,43 @@ body {
   z-index: 1;
 }
 
-@media (max-width: 700px) {
-  .footer {
-    flex-direction: column;
-    padding: 1.2rem 2vw;
-    min-height: unset;
-  }
-  .footer-social {
-    position: static;
-    transform: none;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  .footer-copy {
-    width: 100%;
-    text-align: center;
-  }
+/* =====================
+   Lista de Certificados (JS)
+====================== */
+.cert-lista-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.cert-lista-links li {
+  background: var(--color-bg);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  padding: 0.7rem 1.2rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.cert-lista-links li:hover {
+  background: var(--color-surface);
+  box-shadow: 0 2px 12px rgba(56,189,248,0.10);
+}
+
+.cert-lista-links a {
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 1.08rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+
+.cert-lista-links a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
 }
