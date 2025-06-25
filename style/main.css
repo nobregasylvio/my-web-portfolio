@@ -268,16 +268,171 @@ body {
   letter-spacing: 1px;
 }
 
-.projetos-card {
-  min-height: 120px;
+/* =====================
+   Cards de Projeto Modernos
+====================== */
+/* Ajuste para cards de projeto compactos, centralizados e responsivos */
+#projetos-container {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-#projetos-container {
+.projeto-card-item {
+  background: var(--color-surface);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(56,189,248,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.18s, box-shadow 0.18s;
+  min-width: 0;
   width: 100%;
-  /* Aqui você pode adicionar grid ou flex para os cards de projetos depois */
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  min-height: 350px;
+}
+
+.projeto-card-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(56,189,248,0.18);
+  border-color: var(--color-accent);
+}
+
+.projeto-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--color-surface); /* igual ao fundo do card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 120px;
+  max-height: 180px;
+}
+
+.projeto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.3s;
+  max-height: 180px;
+}
+
+.projeto-card-content {
+  padding: 0.9rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  height: 100%;
+}
+
+.projeto-titulo {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.1rem;
+}
+
+.projeto-descricao {
+  color: var(--color-text);
+  font-size: 0.98rem;
+  margin-bottom: 0.2rem;
+  flex: 1 1 auto;
+  max-height: 80px;
+  min-height: 48px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-bg);
+  padding-right: 4px;
+}
+
+.projeto-descricao::-webkit-scrollbar {
+  width: 6px;
+}
+.projeto-descricao::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 6px;
+}
+.projeto-descricao::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+.projeto-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.2rem 0 0.1rem 0;
+  padding: 0;
+  list-style: none;
+  flex-shrink: 0;
+  flex-grow: 0;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.projeto-tech-list li {
+  background: var(--color-bg);
+  color: var(--color-accent);
+  border-radius: 8px;
+  padding: 0.13rem 0.6rem;
+  font-size: 0.89rem;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(56,189,248,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+.projeto-link {
+  margin-top: 0.4rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.32rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  align-self: flex-start;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 6px rgba(56,189,248,0.10);
+}
+
+.projeto-card-content {
+  justify-content: flex-start;
+}
+
+.projeto-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projeto-link, .projeto-tech-list {
+  margin-bottom: 0;
+}
+
+.projeto-card-content {
+  flex: 1 1 0;
+}
+
+.projeto-tech-list {
+  margin-top: auto;
+}
+
+@media (max-width: 700px) {
+  #projetos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .projeto-card-item {
+    max-width: 98vw;
+  }
 }
 
 /* =====================
@@ -403,4 +558,40 @@ body {
 .cert-lista-links a:hover {
   color: var(--color-accent-hover);
   text-decoration: underline;
+}
+
+/* =====================
+   Estilo para Overlay de Bloqueio
+====================== */
+.projeto-card-locked {
+  position: relative;
+  pointer-events: none;
+  filter: grayscale(0.5) brightness(0.7);
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.projeto-locked-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.486);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+.projeto-locked-icon {
+  width: 200px;
+  height: 200px;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 8px var(--color-bg));
+}
+
+.projeto-card-locked .projeto-link {
+  pointer-events: none;
+  opacity: 0.5;
+  filter: grayscale(1);
+  cursor: not-allowed;
 }
