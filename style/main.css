@@ -122,12 +122,6 @@ body {
   color: var(--color-text);
 }
 
-.hero-content p:last-of-type {
-  font-size: 1.1rem;
-  color: var(--color-muted);
-  margin-bottom: 0;
-}
-
 /* =====================
    Imagem de Perfil e Sobre
 ====================== */
@@ -345,6 +339,21 @@ body {
 .footer-social a:hover {
   background: var(--color-accent-hover);
   color: var(--color-text);
+}
+
+/* =====================
+   Ícones de Social Links e Footer
+====================== */
+.footer-icon, .social-links img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: brightness(1.2);
+  transition: filter 0.2s;
+}
+.social-links a:hover img,
+.footer-social a:hover .footer-icon {
+  filter: brightness(2) drop-shadow(0 0 4px var(--color-accent));
 }
 
 .footer-copy {
