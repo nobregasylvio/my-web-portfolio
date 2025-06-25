@@ -34,6 +34,67 @@ function renderSkills(skills, tipo) {
   skillsTitle.textContent = tipo === 'hard' ? 'Hard Skills' : 'Soft Skills';
 }
 
+// Carrega e exibe os projetos dinamicamente
+function renderProjetos() {
+  fetch('data/projects.json')
+    .then(response => response.json())
+    .then(projetos => {
+      const projetosContainer = document.getElementById('projetos-container');
+      if (!projetosContainer) return;
+      projetosContainer.innerHTML = '';
+      projetos.forEach(proj => {
+        const card = document.createElement('div');
+        card.className = 'projeto-card-item';
+
+        // Overlay de bloqueio se não estiver completed
+        let lockedOverlay = '';
+        if (proj.status !== 'completed') {
+          lockedOverlay = `
+            <div class="projeto-locked-overlay">
+              <img src="assets/icons/locked.svg" alt="Projeto bloqueado" class="projeto-locked-icon">
+            </div>
+          `;
+        }
+
+        // Imagem do projeto (se houver)
+        let imgHTML = '';
+        if (proj.image) {
+          imgHTML = `<div class="projeto-img-wrapper"><img src="${proj.image}" alt="Imagem do projeto ${proj.title}" class="projeto-img"></div>`;
+        }
+
+        // Tecnologias (se houver)
+        let techHTML = '';
+        if (proj.technologies && proj.technologies.length > 0) {
+          techHTML = `<ul class="projeto-tech-list">${proj.technologies.map(tech => `<li>${tech}</li>`).join('')}</ul>`;
+        }
+
+        // Link do projeto (se houver)
+        let linkHTML = '';
+        if (proj.url && proj.status === 'completed') {
+          linkHTML = `<a href="${proj.url}" target="_blank" rel="noopener" class="projeto-link">Ver projeto</a>`;
+        }
+
+        card.innerHTML = `
+          ${lockedOverlay}
+          ${imgHTML}
+          <div class="projeto-card-content">
+            <h3 class="projeto-titulo">${proj.title || ''}</h3>
+            <p class="projeto-descricao">${proj.description || ''}</p>
+            ${linkHTML}
+            ${techHTML}
+          </div>
+        `;
+        if (proj.status !== 'completed') {
+          card.classList.add('projeto-card-locked');
+        }
+        projetosContainer.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('Erro ao carregar projetos:', error);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   fetch('data/certifications.json')
     .then(response => response.json())
@@ -79,4 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => {
       console.error('Erro ao carregar certificações:', error);
     });
+
+  renderProjetos();
 });
