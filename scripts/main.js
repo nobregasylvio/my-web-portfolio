@@ -11,6 +11,8 @@ const softSkillsPadrao = [
 ];
 
 let softSkillTimeout = null;
+const btnPrev = document.getElementById('btn-prev');
+const btnNext = document.getElementById('btn-next');
 
 function renderSkills(skills, tipo) {
   let skillsList = document.getElementById('skills-list');
@@ -33,7 +35,7 @@ function renderSkills(skills, tipo) {
   });
   skillsTitle.textContent = tipo === 'hard' ? 'Hard Skills' : 'Soft Skills';
 }
-
+let projetoCards = [];
 // Carrega e exibe os projetos dinamicamente
 function renderProjetos() {
   fetch('data/projects.json')
@@ -90,6 +92,14 @@ function renderProjetos() {
         projetosContainer.appendChild(card);
       });
     })
+    .then(() => {
+      projetoCards = document.querySelectorAll('.projeto-card-item');
+      // Se houver menos de 4 projetos, esconde os botões de navegação
+      if (projetoCards.length < 5) {
+        btnPrev.style.display = 'none';
+        btnNext.style.display = 'none';
+      }
+    })  
     .catch(error => {
       console.error('Erro ao carregar projetos:', error);
     });
@@ -142,4 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   renderProjetos();
+});
+
+// Adiciona evento de clique para scroll suave
+const projectsContainer = document.getElementById('projetos-container');
+
+const scrollStep = 270; // Quantidade de pixels para rolar a cada clique
+
+btnPrev.addEventListener('click', () => {
+  projectsContainer.scrollBy({
+    left: -scrollStep,
+    behavior: 'smooth'
+  });
+});
+
+btnNext.addEventListener('click', () => {
+  projectsContainer.scrollBy({
+    left: scrollStep,
+    behavior: 'smooth'
+  });
 });
