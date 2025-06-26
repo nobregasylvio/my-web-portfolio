@@ -91,15 +91,7 @@ function renderProjetos() {
         }
         projetosContainer.appendChild(card);
       });
-    })
-    .then(() => {
-      projetoCards = document.querySelectorAll('.projeto-card-item');
-      // Se houver menos de 4 projetos, esconde os botões de navegação
-      if (projetoCards.length < 5) {
-        btnPrev.style.display = 'none';
-        btnNext.style.display = 'none';
-      }
-    })  
+    }) 
     .catch(error => {
       console.error('Erro ao carregar projetos:', error);
     });
