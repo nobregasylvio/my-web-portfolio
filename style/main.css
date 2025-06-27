@@ -108,7 +108,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.hero-content .social-links a {
+.hero-content .social-links a, .btn-cv {
   background: var(--color-accent);
   color: var(--color-bg);
   padding: 0.4rem 1rem;
@@ -117,7 +117,7 @@ body {
   transition: background 0.2s, color 0.2s;
 }
 
-.hero-content .social-links a:hover {
+.hero-content .social-links a:hover, .btn-cv:hover {
   background: var(--color-accent-hover);
   color: var(--color-text);
 }
@@ -605,4 +605,11 @@ body {
 .btn-icon:hover {
   background: var(--color-accent-hover);
   box-shadow: 0 2px 12px rgba(56,189,248,0.18);
+}
+
+.btn-cv a .contact-text {
+  color: black;
+  font-weight: 500;
+  font-size: 1.08rem;
+  margin: auto;
 }
