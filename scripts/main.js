@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-// Carrega e exibe os títulos dos certificados com link e mostra HardSkills ao passar o mouse
 
 const softSkillsPadrao = [
   'Comunicação',
@@ -176,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- RESTANTE DO CÓDIGO ORIGINAL ---
   fetch('data/certifications.json')
     .then(response => response.json())
     .then(certificacoes => {
@@ -194,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         a.target = '_blank';
         li.appendChild(a);
 
-        // Eventos para mostrar HardSkills e mudar título
         li.addEventListener('mouseenter', () => {
           if (softSkillTimeout) {
             clearTimeout(softSkillTimeout);
@@ -206,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
           softSkillTimeout = setTimeout(() => {
             renderSkills(softSkillsPadrao, 'soft');
             softSkillTimeout = null;
-          }, 250); // atraso de 250ms
+          }, 250);
         });
 
         ul.appendChild(li);
@@ -215,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
       certContainer.innerHTML = '';
       certContainer.appendChild(ul);
 
-      // Garante que as soft skills padrão aparecem ao carregar
       renderSkills(softSkillsPadrao, 'soft');
     })
     .catch(error => {
