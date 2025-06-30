@@ -18,6 +18,12 @@
     transition: left 0.35s cubic-bezier(.77,0,.18,1);
     z-index: 1050;
   }
+    .profile-container:hover .profile-image {
+    opacity: 1 !important;
+  }
+  .profile-container:hover #sobre {
+    display: none;
+  }
   #menu-links.open {
     left: 0;
   }
