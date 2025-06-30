@@ -1,3 +1,56 @@
+/* ========== Correção: menu tradicional visível no desktop, menu hamburguer só no mobile ========== */
+/* Desktop: mostra menu-links como barra horizontal, esconde botão hamburguer */
+#menu-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  position: static;
+  width: 100%;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  transition: none;
+}
+.menu-hamburger {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  /* Mobile: menu-links vira lateral, botão hamburguer aparece */
+  #menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--color-bg);
+    box-shadow: 2px 0 16px rgba(0,0,0,0.18);
+    padding: 4.5rem 2rem 2rem 2rem;
+    gap: 1.2rem;
+    transition: left 0.35s cubic-bezier(.77,0,.18,1);
+    z-index: 1050;
+  }
+  #menu-links.open {
+    left: 0;
+  }
+  .menu-hamburger {
+    display: flex;
+  }
+  #menu-links a {
+    width: 100%;
+    text-align: left;
+    justify-content: flex-start;
+    margin: 0;
+  }
+}
 /* =====================
    Menu Hambúrguer Responsivo
 ====================== */
