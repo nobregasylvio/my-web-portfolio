@@ -59,6 +59,9 @@
   #footer div {
     display: none;
   }
+  #hero .profile-container {
+    margin: 60px auto; /* Centraliza imagem de perfil no mobile */
+  }
 }
 /* =====================
    Menu Hambúrguer Responsivo
