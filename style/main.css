@@ -50,6 +50,15 @@
     justify-content: flex-start;
     margin: 0;
   }
+  #hero {
+    flex-direction: column;
+  }
+  .cert-skills-container {
+    flex-direction: column;
+  }
+  #footer div {
+    display: none;
+  }
 }
 /* =====================
    Menu Hambúrguer Responsivo
@@ -295,6 +304,19 @@ body {
   justify-content: center;
   gap: 1rem;
   padding: 2rem 11vw; /* Mantém o padding especial do hero */
+}
+
+@media (max-width: 900px) {
+  #hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.2rem;
+    padding: 2rem 4vw;
+  }
+  .profile-container {
+    margin: 0 auto;
+    max-width: 220px;
+  }
 }
 
 .hero-content {
