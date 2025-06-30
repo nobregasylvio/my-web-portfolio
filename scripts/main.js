@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = cert.urlCertificado;
-        a.textContent = cert.Titulo;
+        a.textContent = `${cert.Titulo} - ${cert.Instituicao}`;
         a.target = '_blank';
         li.appendChild(a);
 
