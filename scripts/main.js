@@ -1,3 +1,30 @@
+// ========== Menu Hamburguer ========== //
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuLinks = document.getElementById('menu-links');
+  // Fecha o menu ao clicar em um link (mobile UX)
+  function closeMenu() {
+    menuLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (menuToggle && menuLinks) {
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = menuLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    // Fecha ao clicar fora do menu
+    document.addEventListener('click', function (e) {
+      if (menuLinks.classList.contains('open') && !menuLinks.contains(e.target) && e.target !== menuToggle) {
+        closeMenu();
+      }
+    });
+    // Fecha ao clicar em um link
+    menuLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+});
 // Carrega e exibe os títulos dos certificados com link e mostra HardSkills ao passar o mouse
 
 const softSkillsPadrao = [
@@ -98,6 +125,58 @@ function renderProjetos() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // MENU HAMBURGUER RESPONSIVO
+  const menu = document.getElementById('menu');
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuLinks = menu.querySelectorAll('a');
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    menu.classList.add('closed');
+    menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    menu.classList.add('open');
+    menu.classList.remove('closed');
+    menuToggle.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  // Estado inicial
+  closeMenu();
+
+  menuToggle.addEventListener('click', () => {
+    if (menu.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Fecha o menu ao clicar em um link (mobile)
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        closeMenu();
+      }
+    });
+  });
+
+  // Fecha o menu ao redimensionar para desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      menu.classList.remove('closed');
+      menu.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    } else {
+      closeMenu();
+    }
+  });
+
+  // --- RESTANTE DO CÓDIGO ORIGINAL ---
   fetch('data/certifications.json')
     .then(response => response.json())
     .then(certificacoes => {
