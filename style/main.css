@@ -453,6 +453,10 @@ body {
   justify-content: center;
   width: 100%;
   margin-top: auto;
+  max-height: 70px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-bg);
 }
 
 .projeto-tech-list li {
