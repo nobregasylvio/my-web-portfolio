@@ -96,11 +96,8 @@ function renderProjetos() {
           techHTML = `<ul class="projeto-tech-list">${proj.technologies.map(tech => `<li>${tech}</li>`).join('')}</ul>`;
         }
 
-        // Link do projeto (se houver)
-        let linkHTML = '';
-        if (proj.url && proj.status === 'completed') {
-          linkHTML = `<a href="${proj.url}" target="_blank" rel="noopener" class="projeto-link">Ver projeto</a>`;
-        }
+        // Link do projeto
+      const linkHTML = `<a href="${proj.url}" target="_blank" rel="noopener" class="projeto-link">Ver projeto</a>`;
 
         card.innerHTML = `
           ${lockedOverlay}
