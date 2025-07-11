@@ -15,7 +15,7 @@ O objetivo é apresentar minhas informações, meus projetos e minhas redes de c
 - `index.html` – Página principal
 - `style/` – Estilos
 - `scripts/` – Lógica JS
-- `data/` – Lista de projetos
+- `data/` – Lista de projetos e certificações
 
 ## 🙋‍♂️ Autor
 
