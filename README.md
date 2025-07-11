@@ -3,6 +3,10 @@
 Este é meu portfólio pessoal, desenvolvido com HTML, CSS e JavaScript puro.  
 O objetivo é apresentar minhas informações, meus projetos e minhas redes de contato de forma simples e objetiva.
 
+## 🌐 Deploy
+
+Acesse o portfólio online clicando [aqui](https://nobregasylvio.github.io/my-web-portfolio/).
+
 ## 🛠️ Tecnologias
 
 - HTML5
